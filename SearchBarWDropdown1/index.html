@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Search Bar W Dropdown</title>
+</head>
+<body>
+    <div class="container">
+        <div class="search-bar">
+            <div id="select">
+                <p id="selectText">All Categories</p>
+                <img src="./image/arrow.png">
+                <ul id="list">
+                    <li class="options">All Categories</li>
+                    <li class="options">Eletronics</li>
+                    <li class="options">Furniture</li>
+                    <li class="options">Sports</li>
+                    <li class="options">Fashion</li>
+                </ul>
+            </div>
+            <input type="text" id="inputfield" placeholder="Search in All Categories">
+        </div>
+    </div>
+
+    <script>
+        let select = document.getElementById("select")
+        let list = document.getElementById("list")
+        let selectText = document.getElementById("selectText")
+        let inputfield = document.getElementById("inputfield")
+        let options = document.getElementsByClassName("options")
+
+        select.onclick = function(){
+            list.classList.toggle("open")
+        }
+
+        for(option of options){
+            option.onclick = function(){
+                selectText.innerHTML = this.innerHTML
+                inputfield.placeholder = "Search in " + selectText.innerHTML
+            }
+        }
+    </script>
+</body>
+</html>
