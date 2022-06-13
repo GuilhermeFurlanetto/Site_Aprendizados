@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    background: #333;
+}
+
+/*Estilizando a Lista em si*/
+ul{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+}
+
+/*Estilizando os Itens da Lista*/
+ul li{
+    list-style: none;
+    margin: 0 25px;
+    display: flex;
+}
+
+/*Estilizando os Icones do Botão*/
+ul li a i{
+    font-size: 35px;
+    color: #333;
+    transition: 0.5s;
+    padding-right: 14px;
+}
+
+/*Estilizando o nome do botão*/
+ul li a span{
+    color: #333;
+    letter-spacing: 2px;
+    transition: 0.5s;
+}
+
+/*Estilizando o link do botão*/
+ul li a{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    width: 210px;
+    height: 80px;
+    background: #fff;
+    padding-left: 20px;
+    position: relative;
+    transition: 0.5s;
+}
+
+/*Criando o 3D do botão no eixo Y (Parte da Esquerda)*/
+ul li a::before{
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: -20px;
+    height: 100%;
+    width: 20px;
+    background: #cecece;
+    transition: 0.5s;
+    transform: skewY(-45deg);
+}
+
+/*Criando o 3D do botão no eixo X (Parte de Baixo)*/
+ul li a::after{
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    left: -10px;
+    height: 20px;
+    width: 100%;
+    background: #cecece;
+    transition: 0.5s;
+    transform: skewX(-45deg);
+}
+
+ul li:hover i{
+    color: #fff;
+}
+ul li:hover span{
+    color: #fff;
+}
+
+ul li:hover a{
+    background: #dd4b39;
+    transform: translate(15px, -15px);
+    box-shadow: -50px 50px 50px rgba(0, 0, 0, 0.5);
+}
+
+ul li:hover a::before{
+    background: #b33a2b;
+}
+ul li:hover a::after{
+    background: #e66a5a;
+}
+
